@@ -27,7 +27,7 @@ public class Parity {
 
     // this is an improved version of the brute froce approch
     // the improvmenets are as follows.
-    // 1. it uses less memery by not using varibale to hold the result of each bit.
+    // 1. it uses less memoery by not using varibale to hold the result of each bit.
 
     // Time complexity : O(n) where n = number digits in the word.
     private static int compute_bf_improved(long word) {
