@@ -1,6 +1,5 @@
 package org.algo.arrays;
 
-import java.util.Arrays;
 
 public class MergeSortedArrays {
 
@@ -11,17 +10,17 @@ public class MergeSortedArrays {
         int filIndex = nums1.length - 1;
         while (n1i >= 0 || n2j >= 0 && filIndex >= 0) {
 
-            int currenti = 0;
+            int currenti = Integer.MIN_VALUE;
             if (n1i >= 0) {
                 currenti = nums1[n1i];
             }
 
-            int currentj = 0;
+            int currentj = Integer.MIN_VALUE;
             if (n2j >= 0) {
                 currentj = nums2[n2j];
             }
 
-            if (currenti >= currentj || n2j < 0) {
+            if (currenti >= currentj) {
                 nums1[filIndex--] = nums1[n1i];
                 n1i--;
             } else {
