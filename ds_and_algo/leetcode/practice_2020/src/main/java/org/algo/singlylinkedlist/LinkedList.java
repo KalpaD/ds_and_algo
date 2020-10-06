@@ -1,21 +1,21 @@
 package org.algo.singlylinkedlist;
 
-public class LinkedList {
+public class LinkedList<T> {
 
     public Node head;
 
     class Node {
         public Node next;
-        public int val;
+        public T val;
 
-        public Node(int val) {
+        public Node(T val) {
             this.val = val;
             this.next = null;
         }
     }
 
     // push at head T = O(1) , S = O(1)
-    public Node push(int val) {
+    public Node push(T val) {
         Node newHead = new Node(val);
         newHead.next = head;
         head = newHead;
@@ -23,7 +23,7 @@ public class LinkedList {
     }
 
     // append T = O(n), S = O(1), where n = number of nodes in the list.
-    public void append(int val) {
+    public void append(T val) {
         Node newNode = new Node(val);
 
         // no nodes case
@@ -44,7 +44,7 @@ public class LinkedList {
 
     // insert after given node
     // T = O(1), S = O(1)
-    public void insert(Node prevNode, int val) {
+    public void insert(Node prevNode, T val) {
         Node newNode = new Node(val);
 
         newNode.next = prevNode.next;
@@ -53,7 +53,7 @@ public class LinkedList {
     }
 
     // T = O(n), S = O(1)
-    public void deleteNodeByKey(int val) {
+    public void deleteNodeByKey(T val) {
         Node current = head;
 
         if (current != null && current.val == val) {

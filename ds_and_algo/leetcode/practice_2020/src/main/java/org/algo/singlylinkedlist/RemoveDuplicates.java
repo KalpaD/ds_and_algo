@@ -5,11 +5,11 @@ import java.util.Set;
 
 public class RemoveDuplicates {
 
-    public LinkedList removeDups(LinkedList linkedList) {
+    public LinkedList<Integer> removeDups(LinkedList linkedList) {
         Set<Integer> set = new HashSet<>();
 
-        LinkedList.Node current = linkedList.head;
-        LinkedList.Node previous = linkedList.head;
+        LinkedList<Integer>.Node current = linkedList.head;
+        LinkedList<Integer>.Node previous = linkedList.head;
 
         while (current != null) {
             int currentValue = current.val;

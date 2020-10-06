@@ -20,7 +20,7 @@ class RemoveDuplicatesTest {
 
     @Test
     void removeDups() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(1);
         linkedList.append(3);
         linkedList.append(4);
@@ -29,7 +29,7 @@ class RemoveDuplicatesTest {
         linkedList.append(1);
         linkedList.append(3);
 
-        LinkedList lList = removeDuplicates.removeDups(linkedList);
+        LinkedList<Integer> lList = removeDuplicates.removeDups(linkedList);
         List<Integer> expected = listToArray(lList);
 
         assertIterableEquals( Arrays.asList(1, 3, 4, 2), expected);
@@ -38,21 +38,21 @@ class RemoveDuplicatesTest {
 
     @Test
     void removeDupsNoDups() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(1);
         linkedList.append(3);
         linkedList.append(4);
 
-        LinkedList lList = removeDuplicates.removeDups(linkedList);
+        LinkedList<Integer> lList = removeDuplicates.removeDups(linkedList);
         List<Integer> expected = listToArray(lList);
 
         assertIterableEquals(Arrays.asList(1, 3, 4), expected);
 
     }
 
-    private List<Integer> listToArray(LinkedList lList) {
+    private List<Integer> listToArray(LinkedList<Integer> lList) {
         List<Integer> list = new ArrayList<>();
-        LinkedList.Node current = lList.head;
+        LinkedList<Integer>.Node current = lList.head;
         while (current != null) {
             list.add(current.val);
             current = current.next;
